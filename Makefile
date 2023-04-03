@@ -29,7 +29,7 @@ BLUE		= \033[1;34m
 FUCHSIA		= \033[1;35m
 CYAN 		= \033[1;36m
 WHITE		= \033[1;37m
-UNKNOWN		= \033[1;38m
+UNKNOWN		= \033[1;39m
 
 OBJ = $(SRCS:.c=.o)
 
