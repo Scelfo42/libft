@@ -53,11 +53,11 @@ re: fclean all
 
 push:
 	git add .
-	@echo "$(GREEN)Adding all changes"
+	@echo "$(RED)Adding all changes"
 	git commit -m "$(date + '%d %m')update"
 	@echo "$(YELLOW)Committing...and..."
 	git push
-	@echo "$(UNKNOWN)PUSHA KEKKO!"
+	@echo "$(GREEN)PUSHA KEKKO!"
 
 norm:
 	norminette *
