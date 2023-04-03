@@ -53,7 +53,7 @@ re: fclean all
 push:
 	git add .
 	@echo "$(RED)Adding all changes"
-	git commit -m “$(date + ‘%d %m’)update”
+	git commit -m “$(date + "%d %m")update”
 	@echo "$(YELLOW)Committing...and..."
 	git push
 	@echo "$(GREEN)PUSHA KEKKO!$(WHITE)"
