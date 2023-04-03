@@ -54,7 +54,7 @@ push:
 	git commit -m "$(date + '%d %m')update"
 	@echo "$(YELLOW)Committing...and..."
 	git push
-	@echo "$(GREEN)PUSHA KEKKO!"
+	@echo "$(UNKNOWN)PUSHA KEKKO!"
 
 norm:
 	norminette *
