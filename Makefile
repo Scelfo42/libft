@@ -29,7 +29,6 @@ BLUE		= \033[1;34m
 FUCHSIA		= \033[1;35m
 CYAN 		= \033[1;36m
 WHITE		= \033[1;37m
-UNKNOWN		= \033[1;44m
 
 OBJ = $(SRCS:.c=.o)
 
@@ -57,7 +56,7 @@ push:
 	git commit -m "$(date + '%d %m')update"
 	@echo "$(YELLOW)Committing...and..."
 	git push
-	@echo "$(GREEN)PUSHA KEKKO!"
+	@echo "$(GREEN)PUSHA KEKKO!$(WHITE)"
 
 norm:
 	norminette *
