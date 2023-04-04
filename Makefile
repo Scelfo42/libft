@@ -21,14 +21,14 @@ SRCS = 	ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isprint.c ft_isascii.c \
 BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-GREY		= \033[1;30m
+GREY		= \033[0;30m
 RED		= \033[0;31m
 GREEN		= \033[0;32m
 YELLOW		= \033[0;33m
-BLUE		= \033[1;34m
-FUCHSIA		= \033[1;35m
-CYAN 		= \033[1;36m
-WHITE		= \033[0;37m
+BLUE		= \033[0;34m
+FUCHSIA		= \033[0;35m
+CYAN 		= \033[0;36m
+NC		= \033[0m
 
 OBJ = $(SRCS:.c=.o)
 
@@ -52,11 +52,19 @@ re: fclean all
 
 push:
 	git add .
-	@echo "$(RED)Adding all changes"
-	git commit -m "$(shell date +'%H:%M %d-%h') update"
+	@echo "$(RED)Adding all changes..."
+	sleep 1.5
+	@clear
+	@echo "$(GREEN)All changes added$(NC)"
+	@read -p "Enter a custom commit message (leave blank to use the default message): " message; \
+	if [ -n "$$message" ]; then \
+		git commit -m "$$message"; \
+	else \
+		git commit -m "$(shell date +'%H:%M %d-%h') update"; \
+	fi
 	@echo "$(YELLOW)Committing...and..."
 	git push
-	@echo "$(GREEN)PUSHA KEKKO!$(WHITE)"
+	@echo "$(GREEN)PUSHA KEKKO!$(NC)"
 
 norm:
 	norminette *
