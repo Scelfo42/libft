@@ -38,15 +38,19 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(ARCL) $(NAME) $(OBJ)
+	clear
 
 bonus: $(OBJ) $(BOBJ)
 	$(ARCL) $(NAME) $(OBJ) $(BOBJ)
+	clear
 
 clean:
 	$(RM) $(OBJ) $(BOBJ)
+	clear
 
 fclean: clean
 	$(RM) $(NAME)
+	clear
 
 re: fclean all
 
